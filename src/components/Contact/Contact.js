@@ -1,5 +1,10 @@
+/*
+ *   Copyright (c) 2026 
+ *   All rights reserved.
+ */
 import React, { useState } from 'react';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaPaperPlane } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 import './Contact.css';
 
 const Contact = () => {
@@ -12,6 +17,7 @@ const Contact = () => {
     message: '',
     privacy: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -21,7 +27,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     if (!formData.privacy) {
@@ -29,18 +35,44 @@ const Contact = () => {
       return;
     }
 
-    console.log('Form Data:', formData);
-    alert('Vielen Dank für Ihre Anfrage! Wir werden uns so schnell wie möglich bei Ihnen melden.');
-    
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      plz: '',
-      auflage: '',
-      message: '',
-      privacy: false
-    });
+    setIsSubmitting(true);
+
+    try {
+      // EmailJS configuration
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || 'Nicht angegeben',
+        plz: formData.plz,
+        auflage: formData.auflage || 'Nicht angegeben',
+        message: formData.message || 'Keine Nachricht',
+        to_email: 'kswrp@outlook.com'
+      };
+
+      await emailjs.send(
+        'service_50l7mbf',
+        'template_whx0zik',
+        templateParams,
+        'mY_eQf2-Ql62wDSp-'
+      );
+
+      alert('Vielen Dank für Ihre Anfrage! Wir werden uns so schnell wie möglich bei Ihnen melden.');
+      
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        plz: '',
+        auflage: '',
+        message: '',
+        privacy: false
+      });
+    } catch (error) {
+      console.error('Email send error:', error);
+      alert('Es gab einen Fehler beim Senden der Nachricht. Bitte versuchen Sie es später erneut oder kontaktieren Sie uns direkt.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -69,7 +101,7 @@ const Contact = () => {
                 <FaPhone className="info-icon" />
                 <div>
                   <h4>Telefon</h4>
-                  <p><a href="tel:0511XXX">0511-XXX XXX</a></p>
+                  <p><a href="tel:+4917623364770">+49 176 23364770</a></p>
                 </div>
               </div>
               
@@ -77,7 +109,7 @@ const Contact = () => {
                 <FaEnvelope className="info-icon" />
                 <div>
                   <h4>E-Mail</h4>
-                  <p><a href="mailto:info@thaqi-prospektvertrieb.de">info@thaqi-prospektvertrieb.de</a></p>
+                  <p><a href="mailto:dritonthaqi1980@outlook.com">dritonthaqi1980@outlook.com</a></p>
                 </div>
               </div>
             </div>
@@ -171,8 +203,8 @@ const Contact = () => {
               </label>
             </div>
 
-            <button type="submit" className="btn btn-primary btn-submit">
-              <FaPaperPlane /> Anfrage absenden
+            <button type="submit" className="btn btn-primary btn-submit" disabled={isSubmitting}>
+              <FaPaperPlane /> {isSubmitting ? 'Wird gesendet...' : 'Anfrage absenden'}
             </button>
           </form>
         </div>

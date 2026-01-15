@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2026 
+ *   All rights reserved.
+ */
 import React from 'react';
 import './Footer.css';
 
@@ -49,8 +53,8 @@ const Footer = () => {
             <h4>Kontakt</h4>
             <p>
               Hannover, Deutschland<br />
-              Tel: 0511-XXX XXX<br />
-              E-Mail: info@thaqi-prospektvertrieb.de
+              Tel: +49 176 23364770<br />
+              E-Mail: dritonthaqi1980@outlook.com
             </p>
           </div>
         </div>

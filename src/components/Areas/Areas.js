@@ -297,6 +297,15 @@ const Areas = () => {
                 />
                 <text x="340" y="880" className="district-text">Springe</text>
 
+                {/* Hildesheim - Southeast of Hannover region */}
+                <path
+                  d="M 720,700 L 820,690 L 900,750 L 920,850 L 860,920 L 760,930 L 680,870 L 670,780 Z"
+                  className={`district-path green ${hoveredArea === 'hildesheim' ? 'active' : ''}`}
+                  onMouseEnter={() => setHoveredArea('hildesheim')}
+                  onMouseLeave={() => setHoveredArea(null)}
+                />
+                <text x="790" y="810" className="district-text white">Hildesheim</text>
+
               </svg>
 
               {/* Hover Info Card */}
@@ -346,7 +355,7 @@ const Areas = () => {
             <div className="note-box">
               <h3>Umland & Region</h3>
               <p>
-                Wir decken die gesamte Region Hannover ab: Garbsen, Langenhagen, Laatzen, Lehrte, Sehnde, Gehrden, Isernhagen und viele weitere Gemeinden.
+                Wir decken die gesamte Region Hannover und Hildesheim ab: Garbsen, Langenhagen, Laatzen, Lehrte, Sehnde, Gehrden, Hildesheim, Isernhagen und viele weitere Gemeinden.
               </p>
               <p>
                 Flächendeckende Zustellung in allen Gebieten mit höchster Zuverlässigkeit.

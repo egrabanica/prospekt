@@ -1,3 +1,7 @@
+/*
+ *   Copyright (c) 2026 
+ *   All rights reserved.
+ */
 import React, { useState } from 'react';
 import { FaChevronDown } from 'react-icons/fa';
 import './FAQ.css';
@@ -8,7 +12,7 @@ const FAQ = () => {
   const faqs = [
     {
       question: 'Wie wird die Qualität geprüft?',
-      answer: 'Durch stichprobenartige Kontrollen vor Ort und transparente Verteilberichte für unsere Kunden. Wir setzen auf GPS-Überwachung und regelmäßige Qualitätskontrollen.'
+      answer: 'Die Qualität wird durch Kontrollberichte geprüft, in denen die verteilten Straßen sowie einige Hausnummern dokumentiert werden, an denen Flyer verteilt wurden.'
     },
     {
       question: 'Werden "Keine Werbung"-Aufkleber beachtet?',
@@ -20,7 +24,7 @@ const FAQ = () => {
     },
     {
       question: 'Welche Verteilgebiete decken Sie ab?',
-      answer: 'Wir decken die gesamte Region Hannover ab, einschließlich aller Stadtteile sowie Garbsen, Langenhagen, Laatzen, Lehrte und das gesamte Umland.'
+      answer: 'Wir decken die gesamte Region Hannover ab, einschließlich aller Stadtteile sowie Garbsen, Langenhagen, Laatzen, Lehrte, Hildesheim und das gesamte Umland.'
     }
   ];
 

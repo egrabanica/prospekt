@@ -23,7 +23,7 @@ const Hero = () => {
       <div className="container">
         <div className="hero-wrapper">
           <div className="hero-content">
-            <div className="hero-badge">Über 20 Jahre Vertrauen in Hannover & Region</div>
+            <div className="hero-badge">Über 10 Jahre Vertrauen in Hannover & Region</div>
             <h1 className="hero-title">
               Ihre Botschaft.<br />
               Direkt im Briefkasten.<br />

@@ -38,8 +38,7 @@ const About = () => {
               Region für unsere Kunden unterwegs.
             </p>
             <p>
-              Neben der Prospekt- und Flyerverteilung, bringen wir auch Kataloge, Werbeblätter und Warenproben gezielt 
-              zum Verbraucher. Von der Planung bis zur Zustellung steht Ihnen das THAQI-Team professionell zur Seite. 
+              Prospekt- und Flyerverteilung, Von der Planung bis zur Zustellung steht Ihnen das THAQI-Team professionell zur Seite. 
               Allein Sie bestimmen, wann und wo die Verteilaktion erfolgen soll.
             </p>
             <p>
