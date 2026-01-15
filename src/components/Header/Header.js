@@ -15,11 +15,6 @@ const Header = ({ scrolled }) => {
     }
   };
 
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-    document.body.style.overflow = 'auto';
-  };
-
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
