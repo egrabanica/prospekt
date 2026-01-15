@@ -220,16 +220,21 @@
     display: block;
     padding: 12px 20px;
     font-size: 16px;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: center;
   }
 
   .nav-link::after {
     display: none;
   }
 
-  .nav-cta {
+  .nav-kontakt {
     margin: 16px 20px 0;
     display: block;
     width: calc(100% - 40px);
+    padding: 12px 24px;
   }
 
   .mobile-menu-toggle {

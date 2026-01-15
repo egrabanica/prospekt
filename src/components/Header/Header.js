@@ -25,12 +25,17 @@ const Header = ({ scrolled }) => {
     if (element) {
       const headerHeight = 80;
       const targetPosition = element.offsetTop - headerHeight;
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      });
+      // Close menu first
+      setMobileMenuOpen(false);
+      document.body.style.overflow = 'auto';
+      // Smooth scroll with delay
+      setTimeout(() => {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }, 100);
     }
-    closeMobileMenu();
   };
 
   return (
