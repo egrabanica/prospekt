@@ -1,0 +1,71 @@
+.pricing {
+  background-color: var(--white);
+}
+
+.pricing-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pricing-text {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pricing-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--dark-gray);
+  margin-bottom: 20px;
+}
+
+.pricing-text strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.pricing-factors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.factor-card {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--medium-gray);
+}
+
+.factor-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
+}
+
+.factor-icon {
+  font-size: 40px;
+  color: var(--primary);
+  margin-bottom: 20px;
+}
+
+.factor-card h4 {
+  color: var(--dark-gray);
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.factor-card p {
+  color: var(--dark-gray);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .pricing-factors {
+    grid-template-columns: 1fr;
+  }
+}
