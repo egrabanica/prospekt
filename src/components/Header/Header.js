@@ -39,12 +39,12 @@ const Header = ({ scrolled }) => {
         <div className="header-content">
           <div className="logo" onClick={() => scrollToSection('hero')}>
             <img 
-              src=\"/images/logo.png\" 
-              alt=\"Thaqi Prospektvertrieb Logo\" 
-              className=\"logo-image\" 
-              loading=\"eager\"
-              width=\"90\"
-              height=\"90\"
+              src="/images/logo.png" 
+              alt="Thaqi Prospektvertrieb Logo" 
+              className="logo-image" 
+              loading="eager"
+              width="90"
+              height="90"
             />
           </div>
 
