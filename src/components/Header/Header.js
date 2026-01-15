@@ -7,10 +7,17 @@ const Header = ({ scrolled }) => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+    // Prevent body scroll when menu is open
+    if (!mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   };
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
+    document.body.style.overflow = 'auto';
   };
 
   const scrollToSection = (sectionId) => {
@@ -31,7 +38,14 @@ const Header = ({ scrolled }) => {
       <div className="container">
         <div className="header-content">
           <div className="logo" onClick={() => scrollToSection('hero')}>
-            <img src="/images/logo.png" alt="Thaqi Prospektvertrieb Logo" className="logo-image" />
+            <img 
+              src=\"/images/logo.png\" 
+              alt=\"Thaqi Prospektvertrieb Logo\" 
+              className=\"logo-image\" 
+              loading=\"eager\"
+              width=\"90\"
+              height=\"90\"
+            />
           </div>
 
           <nav className={`nav ${mobileMenuOpen ? 'active' : ''}`}>

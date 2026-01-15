@@ -1,0 +1,70 @@
+/*
+ * Performance Optimizations
+ * Improves website loading speed and overall performance
+ */
+
+/* Prevent CLS (Cumulative Layout Shift) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize font rendering */
+@font-face {
+  font-display: swap;
+}
+
+/* GPU acceleration for frequently animated elements */
+.header,
+.nav,
+.btn,
+.logo-image {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce repaints */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Image optimization */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Reduce paint on scroll */
+.header {
+  contain: layout style paint;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Performance: Remove margin/padding that causes unnecessary reflows */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Optimize mobile performance */
+@media (max-width: 768px) {
+  /* Disable animations on low-end devices */
+  .hero-content {
+    animation: none;
+  }
+  
+  /* Reduce paint on mobile */
+  .nav.active {
+    will-change: auto;
+  }
+}

@@ -12,6 +12,7 @@
   color: var(--white);
   padding: 120px 0 80px;
   overflow: hidden;
+  will-change: auto;
 }
 
 .hero-wrapper {
@@ -42,6 +43,8 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
+  display: block;
+  will-change: auto;
 }
 
 .hero-content {

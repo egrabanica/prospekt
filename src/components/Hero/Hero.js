@@ -45,7 +45,14 @@ const Hero = () => {
           </div>
           <div className="hero-image-section">
             <div className="hero-image-wrapper">
-              <img src="/images/hero-delivery.png" alt="Professionelle Prospektverteilung" className="hero-image" />
+              <img 
+                src="/images/hero-delivery.png" 
+                alt="Professionelle Prospektverteilung" 
+                className="hero-image"
+                loading="eager"
+                width="600"
+                height="600"
+              />
             </div>
           </div>
         </div>
